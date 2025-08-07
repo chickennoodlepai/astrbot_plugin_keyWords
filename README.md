@@ -1,8 +1,8 @@
-# helloworld
+# keyWords
 
-AstrBot 插件模板
+AstrBot 关键词回复插件
 
-A template plugin for AstrBot plugin feature
+支持精确匹配、模糊匹配
 
 # 支持
 
