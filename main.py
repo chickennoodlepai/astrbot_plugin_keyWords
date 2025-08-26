@@ -40,7 +40,7 @@ class KeywordReplyPlugin(Star):
 
         # 移除命令前缀部分
         command_prefix1 = "/添加自定义回复"
-        command_prefix2 = "添加自定义回复 "
+        command_prefix2 = "添加自定义回复"
         # 去除命令前缀
         if full_message.startswith(command_prefix1):
             args = full_message[len(command_prefix1):].strip()
@@ -70,7 +70,6 @@ class KeywordReplyPlugin(Star):
         yield event.plain_result(f"✅ 已添加关键词回复： [{keyword}] -> {reply}")
 
     @command("查看自定义回复")
-    @permission_type(PermissionType.ADMIN)
     async def list_replies(self, event: AstrMessageEvent):
         """查看所有关键词回复"""
         if not self.keyword_map:
@@ -82,7 +81,6 @@ class KeywordReplyPlugin(Star):
         yield event.plain_result(msg)
 
     @command("删除自定义回复")
-    @permission_type(PermissionType.ADMIN)
     async def delete_reply(self, event: AstrMessageEvent, keyword: str):
         """/删除自定义回复 关键字 """
         keyword = keyword.strip().lower()
