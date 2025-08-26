@@ -33,7 +33,6 @@ class KeywordReplyPlugin(Star):
             logger.error(f"配置保存失败: {str(e)}")
 
     @command("添加自定义回复")
-    @permission_type(PermissionType.ADMIN)
     async def add_reply(self, event: AstrMessageEvent):
         """/添加自定义回复 关键字|回复内容"""
         # 获取原始消息内容
